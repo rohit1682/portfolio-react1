@@ -1,13 +1,16 @@
 import React from 'react';
-import Nav from './Nav';
+
+import Intro from './Intro';
 import Profile from './Profile';
+import Nav from './Nav';
 
 class Header extends React.Component {
 
     render() {
         return(
             <>
-                <Nav/>
+                {/* <Nav/> */}
+                <Intro content = {this.props.content}/>
                 <Profile content = {this.props.content}/>
             </>
         );

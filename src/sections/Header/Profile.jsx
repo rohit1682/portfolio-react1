@@ -1,21 +1,39 @@
 import React from 'react';
-import './profile.css';
+import '../../dist/Header/Profile.css';
 
 class Profile extends React.Component {
   render() {
-    <section className='grid md:grid-cols-3 md:px-10 lg:px-20 xl:px-40'>
-      
-      <img src={this.props.content.profile} className='rounded-4xl' alt="Profile Picture" />
 
-      <p>
-        "Hi, I'm Rohit Ghosh, a Software Developer at EPAM Systems with a strong foundation in Computer Science and Engineering. I have experience in full-stack development, machine learning, and building scalable, user-centric applications using technologies like ReactJS, Django, and Node.js. My journey includes impactful internships at HP India and Salesforce, alongside certifications in AI, GenAI, and full-stack development. As a former Project Coordinator for Enactus KIIT, I've also demonstrated leadership by managing cross-functional teams and delivering successful initiatives. I'm passionate about solving real-world problems through innovative and collaborative solutions.
-      </p>
+    return (
+      <section className='wrapper py-5 md:px-10 lg:px-20 xl:px-40'>
 
-      <div className='flex flex-col justify-evenly'>
+        <div className='box grid md:grid-cols-3 gap-10 p-5'>
+
+          <img src={this.props.content.profile} className='col-span-1 rounded-4xl w-70 flex place-items-center' alt="Profile Picture" />
+          
+          <div className='col-span-2 flex flex-col justify-evenly'>
+
+            <p className='flex place-items-center text-[13px]'>
+              {this.props.content.description}
+            </p>
+            
+            <div className='flex flex-col w-full gap-5'>
+              <p className='flex flex-start text-[25px]'>Lets Connect!</p>
+              <div className='flex md:flex-row place-items-center gap-10'>
+                <img src={this.props.content.email} alt="email" className="w-10 h-10 hover:cursor-pointer transition-transform duration-300 hover:scale-110" />
+                <img src={this.props.content.call} alt="call" className="w-10 h-10 hover:cursor-pointer transition-transform duration-300 hover:scale-110" />
+                <img src={this.props.content.linkedin} alt="linkedin" className="w-10 h-10 hover:cursor-pointer transition-transform duration-300 hover:scale-110" />
+                <img src={this.props.content.location} alt="location" className="w-10 h-10 hover:cursor-pointer transition-transform duration-300 hover:scale-110" />
+              </div>
+            </div>
+
+          </div>
+
+        </div>
         
-      </div>
 
-    </section>
+      </section>
+    );
   }
 }
 
